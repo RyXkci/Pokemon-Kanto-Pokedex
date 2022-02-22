@@ -5,6 +5,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Gideon+Roman&family=Playfair+Display:wght@400;500;600;700;900&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <title>Kanto Pokemon Search App</title>
 </head>
@@ -12,60 +19,65 @@
 <body>
 
     <header class="header">
-        <h1 class="header-title">Kanto Region Pokémon</h1>
+        <h1 class="title header-title">Kanto Region Pokémon</h1>
     </header>
 
     <main class="main main-back">
-        <div class="main-container">
+        <div class="data-container">
             <h1 class="title data-container-title">#139 Gyarados</h1>
             <div class="data-container-img img-container">
                 <img src="pokemon images/gyarados.png" alt="" class="pokemon-img">
-                <div class="data-container">
-                    <div class="types-container">
-                        <h2 class="data-title types-title">Types</h2>
-                        <ul class="types-ul">
-                            <li class="type-li">Water</li>
-                            <li class="type-li">Flying</li>
-                        </ul>
-                    </div>
-                    <div class="learnt-moves-container">
-                        <h2 class="data-title learnt-moves-title">Moves</h2>
-                        <ul class="learnt-moves-ul">
-                            <li class="learnt-move-li">Hydro Pump</li>
-                            <li class="learnt-move-li">Dragon Rage</li>
-                            <li class="learnt-move-li">Hyper Beam</li>
-                            <li class="learnt-move-li">Bite</li>
-                        </ul>
-                    </div>
-                  <div class="taught-moves-container">
-                      <h2 class="data-title taught-moves-title">TM/HM Moves</h2>
-                      <ul class="taught-moves-ul">
-                          <li class="taught-move-li">Surf</li>
-                          <li class="taught-move-li">Strength</li>
-                          <li class="taught-move-li">Bubblebeam</li>
-                          <li class="taught-move-li">Ice Beam</li>
-                      </ul>
-                  </div>
-                  <div class="stats-container">
-                      <h2 class="data-title stats-title">Base Stats</h2>
-                      <ul class="stats-container">
-                          <li class="stats-li">Attack: 150</li>
-                          <li class="stats-li">Defense: 79</li>
-                          <li class="stats-li">HP: 95</li>
-                          <li class="stats-li">Special-attack: 90</li>
-                          <li class="stats-li">Special-defense: 100</li>
-                          <li class="stats-li">Speed: 81</li>
-                      </ul>
-                  </div>
-
-                </div>
             </div>
-<div class="sprite-container">
-    <p class="sprite-container-text">Sprite</p>
-    <img src="sprites/130.png" alt="" class="sprite-img">
-</div>
-        </div>
+            <div class="info-container">
+                <div class="types-container">
+                    <h2 class="info-title types-title">Types</h2>
+                    <ul class="types-ul">
+                        <li class="li type-li">Water</li>
+                        <li class="li type-li">Flying</li>
+                    </ul>
+                </div>
+                <div class="learnt-moves-container">
+                    <h2 class="info-title learnt-moves-title">Moves</h2>
+                    <ul class="learnt-moves-ul">
+                        <li class="li learnt-move-li">Hydro Pump</li>
+                        <li class="li learnt-move-li">Dragon Rage</li>
+                        <li class="li learnt-move-li">Hyper Beam</li>
+                        <li class="li learnt-move-li">Bite</li>
+                    </ul>
+                </div>
+                <div class="taught-moves-container">
+                    <h2 class="info-title taught-moves-title">TM/HM Moves</h2>
+                    <ul class="taught-moves-ul">
+                        <li class="li taught-move-li">Surf</li>
+                        <li class="li taught-move-li">Strength</li>
+                        <li class="li taught-move-li">Bubblebeam</li>
+                        <li class="li taught-move-li">Ice Beam</li>
+                    </ul>
+                </div>
+                <div class="stats-container">
+                    <h2 class="info-title stats-title">Base Stats</h2>
+                    <ul class="stats-container">
+                        <li class="li stats-li">Attack: 150</li>
+                        <li class="li stats-li">Defense: 79</li>
+                        <li class="li stats-li">HP: 95</li>
+                        <li class="li stats-li">Special-attack: 90</li>
+                        <li class="li stats-li">Special-defense: 100</li>
+                        <li class="li stats-li">Speed: 81</li>
+                    </ul>
+                </div>
+
+            </div>
+
+         <div class="sprite-container">
+                <p class="sprite-container-text">Sprite</p>
+                <img src="sprites/130.png" alt="" class="sprite-img">
+         </div>
         <button class="reset-button">Reset</button>
+
+          
+    </div>
+
+            
     </main>
 
     <script src="app.js"></script>
