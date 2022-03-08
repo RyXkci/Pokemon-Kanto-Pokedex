@@ -1,4 +1,6 @@
 const form = document.querySelector('#pokemonSearch');
+const front = document.querySelector('.front');
+const main = document.querySelector('.main');
 const titleH1 = document.querySelector('.data-container-title');
 const imgContainer = document.querySelector('.data-container-img');
 const typesContainer = document.querySelector('.types-ul');
@@ -128,6 +130,11 @@ function animate() {
     rightPanel.classList.add('right-animation');
     leftPanel.classList.add('left-animation');
     form.classList.add('pokemon-form-animate')
+    setTimeout(() => {
+        front.parentElement.removeChild(front)
+    }, 1000) 
+    
+    main.style.height = '100%'; //   FRONT SECTION NEEDS TO BE ELIMINATED AND MAIN SET TO 100% TO CUT OUT LEFT OVER WHITESPACE   //
 }
 
 form.addEventListener('submit', async (e) => {
