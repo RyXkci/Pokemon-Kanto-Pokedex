@@ -129,20 +129,17 @@ function appendData(title, img, type, learntMoves, taughtMoves, stats, sprite) {
 function animate() {
     rightPanel.classList.add('right-animation');
     leftPanel.classList.add('left-animation');
-    form.classList.add('pokemon-form-animate')
-    setTimeout(() => {
-        front.parentElement.removeChild(front)
-    }, 1000) 
-    
-    main.style.height = '100%'; //   FRONT SECTION NEEDS TO BE ELIMINATED AND MAIN SET TO 100% TO CUT OUT LEFT OVER WHITESPACE   //
+    form.classList.add('pokemon-form-animate') 
+    main.style.height = '100%'; //  MAIN HEIGHT SET TO 100% TO CUT OUT LEFT OVER WHITESPACE   //
+    front.style = 'pointer-events: none;'//   MAKES RESET BUTTON CLICKABLE   //
 }
 
 form.addEventListener('submit', async (e) => {
     e.preventDefault();
-    const userInput = form.elements.pokemon.value;
+    const userInput = form.elements.pokemon.value.toLowerCase();
     console.log(userInput)
     let allPokemon = await kantoPokemon()
-    const pokemon = allPokemon.find(pokemonName => pokemonName.name === userInput.toLowerCase())
+    const pokemon = allPokemon.find(pokemonName => pokemonName.name === userInput)
     if (pokemon) {
         fetchPokemonData(userInput)
     } else (console.log('Type a kanto pokemon'))
@@ -151,21 +148,24 @@ form.addEventListener('submit', async (e) => {
 })
 
 reset.addEventListener('click', () => {
-    titleH1.innerText = ''
-    let img = imgContainer.querySelector('img')
-    let sprite = spriteContainer.querySelector('img')
-    img.parentElement.removeChild(img)
-    sprite.parentElement.removeChild(sprite)
-    let lis = document.querySelectorAll('.li')
-    lis.forEach(li => {
-        li.parentElement.removeChild(li)
-    })
+    
     rightPanel.classList.remove('right-animation');
     leftPanel.classList.remove('left-animation');
     setTimeout(() => {
+        titleH1.innerText = ''
+        let img = imgContainer.querySelector('img')
+        let sprite = spriteContainer.querySelector('img')
+        img.parentElement.removeChild(img)
+        sprite.parentElement.removeChild(sprite)
+        let lis = document.querySelectorAll('.li')
+        lis.forEach(li => {
+            li.parentElement.removeChild(li)
+        })
         form.classList.remove('pokemon-form-animate')
         form.reset()
+        main.style.height = '100vh';
     }, 1000)
+    front.style = 'pointer-events: auto;'//   MAKES FORM CLICKABLE AGAIN   ///
     
 })
 
