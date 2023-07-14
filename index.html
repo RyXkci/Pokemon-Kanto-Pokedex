@@ -22,14 +22,24 @@
         <h1 class="title header-title">Kanto Region Pokémon</h1>
     </header>
 
+
+
     <main class="main">
+
         <div class="front">
             <div class="left"></div>
             <div class="right"></div>
+            <div class="error-message" id="errorMessageContainer" data-toggled="false">
+                <!--   <div class="error-message-inner">
+                    There's a time and place for everything! Pick a Kanto Region Pokèmon!
+
+                </div> -->
+            </div>
             <form action="" id="pokemonSearch" class="pokemon-form">
-                <input type="text" name="pokemon" placeholder="type your gen 1 pokemon" class="pokemon-form-input">
+                <input id="pokemonInput" type="text" name="pokemon" placeholder="type your gen 1 pokemon"
+                    class="pokemon-form-input">
                 <button class="pokemon-form-button" id="submit">GO!</button>
-            
+
             </form>
         </div>
 
@@ -78,15 +88,15 @@
 
             </div>
 
-         <div class="sprite-container">
+            <div class="sprite-container">
                 <p class="sprite-container-text">Sprite</p>
-         </div>
-        <button type="button" class="reset-button">Reset</button>
+            </div>
+            <button type="button" class="reset-button">Reset</button>
 
-          
-    </div> 
-</main>
-            
+
+        </div>
+    </main>
+
 
     <script src="app.js"></script>
 </body>

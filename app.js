@@ -9,6 +9,11 @@ const taughtMovesContainer = document.querySelector('.taught-moves-ul');
 const statsContainer = document.querySelector('.stats-ul');
 const spriteContainer = document.querySelector('.sprite-container');
 
+/* Error message */
+const errorMessageContainer = document.querySelector('#errorMessageContainer');
+const pokemonInput = document.querySelector('#pokemonInput');
+console.log(errorMessageContainer)
+
 const rightPanel = document.querySelector('.right');
 const leftPanel = document.querySelector('.left');
 
@@ -126,6 +131,7 @@ function appendData(title, img, type, learntMoves, taughtMoves, stats, sprite) {
 
 }
 
+/*    ANIMATING THE FRONT SECTION AFTER DATA IS FILLED OUT */
 function animate() {
     rightPanel.classList.add('right-animation');
     leftPanel.classList.add('left-animation');
@@ -133,6 +139,8 @@ function animate() {
     main.style.height = '100%'; //  MAIN HEIGHT SET TO 100% TO CUT OUT LEFT OVER WHITESPACE   //
     front.style = 'pointer-events: none;'//   MAKES RESET BUTTON CLICKABLE   //
 }
+
+/*    FORM EVENT LISTENER */
 
 form.addEventListener('submit', async (e) => {
     e.preventDefault();
@@ -142,11 +150,47 @@ form.addEventListener('submit', async (e) => {
     const pokemon = allPokemon.find(pokemonName => pokemonName.name === userInput)
     if (pokemon) {
         fetchPokemonData(userInput)
-    } else (console.log('Type a kanto pokemon'))
+    } else (printErrorMessage("There's a time and place for everything! Type a Kanto Region Pokèmon!"))
 
 
+});
+
+
+/*    ERROR MESSAGE */
+
+const printErrorMessage = (msg) => {
+    let toggled = errorMessageContainer.getAttribute('data-toggled');
+    errorMessageContainer.setAttribute('data-toggled', true);
+    console.log(toggled)
+    
+const errorMessageText = document.createElement('div');
+errorMessageText.classList.add('error-message-inner');
+errorMessageText.innerText = msg;
+errorMessageContainer.appendChild(errorMessageText);
+errorMessageContainer.classList.add('error-message-toggled');
+}
+
+const removeErrorMessage = () => {
+    let toggled = errorMessageContainer.getAttribute('data-toggled');
+errorMessageContainer.setAttribute('data-toggled', false)
+  let errorMessage = document.querySelector('.error-message-inner');
+  errorMessageContainer.removeChild(errorMessage);
+  errorMessageContainer.classList.remove('error-message-toggled');
+
+};
+
+pokemonInput.addEventListener('click', () => {
+    const toggled = errorMessageContainer.getAttribute('data-toggled');
+    if (toggled === false) {
+        return
+    } else {
+        removeErrorMessage()
+    }
 })
 
+
+
+/*    RESET */
 reset.addEventListener('click', () => {
     
     rightPanel.classList.remove('right-animation');
